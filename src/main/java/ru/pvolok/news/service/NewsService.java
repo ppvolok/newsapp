@@ -26,7 +26,7 @@ public class NewsService {
             String title = doc.select("body div.timeline > div:nth-child(1) a").attr("title");
             Long newsId = Long.valueOf(doc.select("body div.timeline > div:nth-child(1) a").attr("href").split("/")[2]);
 
-            if (!newsRepository.findByNewsId(newsId).isPresent()) {
+            if (!newsRepository.findByNewsId(newsId).isEmpty()) {
                 NewsEntity newsEntity = new NewsEntity();
                 newsEntity.setNewsId(newsId);
                 newsEntity.setCapiton(title);
