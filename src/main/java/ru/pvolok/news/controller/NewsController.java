@@ -1,7 +1,6 @@
 package ru.pvolok.news.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ExceptionHandler;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.pvolok.news.model.NewsDto;
@@ -10,10 +9,10 @@ import ru.pvolok.news.service.NewsService;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 public class NewsController {
 
-    @Autowired
-    private NewsService newsService;
+    private final NewsService newsService;
 
     @GetMapping("/news/last")
     public NewsDto getLastNews() {
