@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class NewsService {
 
+
     private final NewsRepository newsRepository;
 
     public NewsDto getLastNews() {
