@@ -7,6 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class NewsDto {
     private Long id;
-    private String capiton;
+    private String caption;
     private String text;
 }

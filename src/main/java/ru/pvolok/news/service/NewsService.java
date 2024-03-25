@@ -29,7 +29,7 @@ public class NewsService {
             if (!newsRepository.findByNewsId(newsId).isEmpty()) {
                 NewsEntity newsEntity = new NewsEntity();
                 newsEntity.setNewsId(newsId);
-                newsEntity.setCapiton(title);
+                newsEntity.setCaption(title);
 
                 newsRepository.save(newsEntity);
             }
@@ -43,7 +43,7 @@ public class NewsService {
     public List<NewsDto> getAllNews() {
         return newsRepository.findAll()
                 .stream()
-                .map(newsEntity -> new NewsDto(newsEntity.getNewsId(), newsEntity.getCapiton(), null))
+                .map(newsEntity -> new NewsDto(newsEntity.getNewsId(), newsEntity.getCaption(), null))
                 .collect(Collectors.toList());
     }
 }

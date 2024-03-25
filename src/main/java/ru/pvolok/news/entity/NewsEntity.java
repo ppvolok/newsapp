@@ -14,6 +14,6 @@ public class NewsEntity {
 
     private Long newsId;
 
-    private String capiton;
+    private String caption;
     private String text;
 }
