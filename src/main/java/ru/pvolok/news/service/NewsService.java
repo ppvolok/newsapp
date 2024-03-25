@@ -5,6 +5,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.stereotype.Service;
 import ru.pvolok.news.entity.NewsEntity;
+import ru.pvolok.news.exception.InterfaxNotAvailableException;
 import ru.pvolok.news.model.NewsDto;
 import ru.pvolok.news.repository.NewsRepository;
 
@@ -34,7 +35,7 @@ public class NewsService {
 
             return new NewsDto(newsId, title, null);
         } catch (IOException e) {
-            throw new RuntimeException(e.getMessage());
+            throw new InterfaxNotAvailableException(e.getMessage());
         }
     }
 
